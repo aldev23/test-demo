@@ -1,12 +1,16 @@
 import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 
-// Replace the following with your Atlas connection string
-const url = "mongodb+srv://chaiaurcode:chaiaurcode@cluster0.ol4bhek.mongodb.net/";
+// Load environment variables from .env file
+dotenv.config();
+
+// Read the MongoDB connection string from the environment
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Create a MongoClient instance
-const client = new MongoClient(url);
+const client = new MongoClient(MONGODB_URI);
 
-// Define the run function as an async function
+// Define the connectDB function as an async function
 const connectDB = async () => {
     try {
         // Connect to the MongoDB Atlas cluster
@@ -18,7 +22,7 @@ const connectDB = async () => {
         // Close the MongoDB connection
         await client.close();
     }
-}
+};
 
 // Run the async function and handle any errors
-export default connectDB
+export default connectDB;
