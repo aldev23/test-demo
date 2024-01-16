@@ -1,11 +1,12 @@
 {
-  "name": "code-chai",
+  "name": "chai-backend",
   "version": "1.0.0",
-  "description": "backend at chai aur code -youtube",
-  "main": "index.js",
+  "description": "a backend at chai aur code channel - youtube",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+    
   },
   "keywords": [
     "javascript",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -28,6 +30,11 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.4",
     "mongoose-aggregate-paginate-v2": "^1.0.7",
+    "multer": "^1.4.5-lts.1",
     "node": "^21.2.0"
+  },
+  "nodemonConfig": {
+    "watch": ["src"],
+    "ext": "js,json"
   }
 }
